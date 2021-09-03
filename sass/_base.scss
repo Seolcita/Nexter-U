@@ -35,3 +35,19 @@ body {
   font-weight: 300;
   line-height: 1.6;
 }
+
+.container {
+  display: grid;
+  grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
+  grid-template-columns:
+    [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr)
+    [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end])
+    [center-end] minmax(6rem, 1fr) [full-end];
+
+  // grid-template-columns: 8rem 1fr repeat(8, minmax(min-content, 14rem)) 1fr;
+  // I have 8 for main contents, 1140px/8=142.5px
+  // (content width is good between 1100px and 1200px)
+  // minmax(min-size, max-size) >> no less than min-content size, no more than 14rem
+  // reason why I have 1fr >> I want to have flexible empty spaces before and after 8 columns.
+  // minmax(6rem, 1fr) >> I want to have min margins
+}

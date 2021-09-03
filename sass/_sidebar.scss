@@ -1,0 +1,7 @@
+/** @format */
+
+.sidebar {
+  background-color: $color-primary;
+  grid-column: sidebar-start / sidebar-end; //from sidebar-start to sidebar-end (entire row)
+  grid-row: 1 / -1; //from first row to bottom (entire column)
+}
